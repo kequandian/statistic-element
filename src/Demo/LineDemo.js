@@ -1,4 +1,4 @@
-import Line from '../components/general-chart/Line';
+import Line from '@/components/general-chart/Line';
 
 const LineDemo = ({}) => {
 

@@ -47,9 +47,6 @@ class Pie extends React.Component {
       //获取legend
     })
 
-
-    console.log('kkkk newLegend = ',newLegend);
-
     var getOption = () => {
       return {
             title : {

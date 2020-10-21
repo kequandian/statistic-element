@@ -14,7 +14,6 @@
  */
 
 import React from 'react';
-import { query } from 'kqd-utils/lib/services';
 
 class ColumnTotal extends React.Component {
 

@@ -1,4 +1,4 @@
-import Radar from '../components/radar/Radar';
+import Radar from '@/components/radar/Radar';
 
 const RadarDemo = ({}) => {
 

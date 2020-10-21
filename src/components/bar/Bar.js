@@ -26,7 +26,6 @@ class Bar extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("componentWillReceiveProps===", nextProps);
     this.setState({
       levelDisplay: nextProps.levelDisplay || false,
     })

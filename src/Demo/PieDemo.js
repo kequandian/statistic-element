@@ -1,4 +1,4 @@
-import Pie from '../components/general-chart/Pie';
+import Pie from '@/components/general-chart/Pie';
 
 const PieDemo = ({}) => {
 

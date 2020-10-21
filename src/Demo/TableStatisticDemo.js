@@ -1,4 +1,4 @@
-import TableStatistic from '../components/tableStatistic/TableStatistic';
+import TableStatistic from '@/components/tableStatistic/TableStatistic';
 
 const TableStatisticDemo = ({}) => {
 

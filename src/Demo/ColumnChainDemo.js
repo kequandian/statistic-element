@@ -1,4 +1,4 @@
-import ColumnChain from '../components/columnChain/ColumnChain';
+import ColumnChain from '@/components/columnChain/ColumnChain';
 
 const ColumnChainDemo = ({}) => {
 

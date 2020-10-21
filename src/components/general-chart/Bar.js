@@ -21,40 +21,40 @@ export default GeneralChartWrapped(
       trigger: 'axis',
     },
     toolbox: {     //展示保存为图片
-        feature: {
-            saveAsImage: {}
-        }
+      feature: {
+        saveAsImage: {}
+      }
     },
     series: {
       barMaxWidth: '60',
-    //   markPoint : {
-    //       data : [
-    //           {type : 'max', name: '最大值'},
-    //           {type : 'min', name: '最小值'}
-    //       ]
-    //   },
-      markLine : {
-          data : [
-              {type : 'average', name: '平均值'}
-          ]
+      //   markPoint : {
+      //       data : [
+      //           {type : 'max', name: '最大值'},
+      //           {type : 'min', name: '最小值'}
+      //       ]
+      //   },
+      markLine: {
+        data: [
+          { type: 'average', name: '平均值' }
+        ]
       },
       label: {
         normal: {
-            show: true,
-            position: 'top',
-            formatter: (data) => {
-                if(Number(data.value) === 0){
-                    return '';
-                }
-                return data.value;
+          show: true,
+          position: 'top',
+          formatter: (data) => {
+            if (Number(data.value) === 0) {
+              return '';
             }
+            return data.value;
+          }
         }
+      },
     },
-    },
-    Calulable:false,
+    Calulable: false,
   },
   (option) => {
-    console.log('Bar EChart option:',option);
+    console.log('Bar EChart option:', option);
     return option;
   },
 );

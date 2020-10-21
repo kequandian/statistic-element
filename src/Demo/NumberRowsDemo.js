@@ -1,7 +1,7 @@
-import NumberRows from '../components/numberRows/NumberRows';
-import ColumnChain from '../components/columnChain/ColumnChain';
-import LineGrid from '../components/lineGrid/LineGrid';
-import Pie from '../components/pie/Pie';
+import NumberRows from '@/components/numberRows/NumberRows';
+import ColumnChain from '@/components/columnChain/ColumnChain';
+import LineGrid from '@/components/lineGrid/LineGrid';
+import Pie from '@/components/pie/Pie';
 
 const NumberRowsDemo = ({
 

@@ -17,7 +17,6 @@ const LineGrid = ({
   children,
 }) => {
 
-  console.log('kkkkkkk children',children);
   if(Array.isArray(children) == true && children.length > 0){
     children.map((item,index) => {
       if(!item){
@@ -25,8 +24,6 @@ const LineGrid = ({
       }
     })
   }
-
-  console.log('kkkkklllllll children = ',children);
 
   const createList = (children) => children && children.length >= 0 && children.map((item,index) => {
       return (

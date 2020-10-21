@@ -1,6 +1,6 @@
 import React from 'react';
-import ColumnTotal from '../components/columnTotal/ColumnTotal';
-import LineGrid from '../components/lineGrid/LineGrid';
+import ColumnTotal from '@/components/columnTotal/ColumnTotal';
+import LineGrid from '@/components/lineGrid/LineGrid';
 
 const ColumnTotalDemo = ({
 

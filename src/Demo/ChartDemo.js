@@ -1,6 +1,8 @@
-import Chart from '../components/Chart';
+import Chart, { regQueryMethod } from '@/Chart';
 
-const ChartDemo = ({}) => {
+// regQueryMethod(func);  // 项目入口注册一个 发起 GET 的方法
+
+const ChartDemo = ({ }) => {
   return (
     <Chart group="stat:profit" />
   )

@@ -19,15 +19,15 @@ export default GeneralChartWrapped(
     CHART: 'line',
     tooltip: {},
     series: {
-      markLine : {
-        data : [
-            {type : 'average', name: '平均值'}
+      markLine: {
+        data: [
+          { type: 'average', name: '平均值' }
         ]
       },
     },
   },
   (option) => {
-    console.log('Line EChart option:',option);
+    console.log('Line EChart option:', option);
     return option;
   },
 );

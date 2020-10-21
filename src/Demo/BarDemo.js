@@ -1,4 +1,4 @@
-import Bar from '../components/general-chart/Bar';
+import Bar from '@/components/general-chart/Bar';
 
 const BarDemo = ({}) => {
 

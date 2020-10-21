@@ -1,14 +1,14 @@
-import {NewProgressRing}  from '../index';
+import { NewProgressRing } from '../export';
 
-const NewProgressRingDemo = ({}) => {
+const NewProgressRingDemo = ({ }) => {
 
   const pieProps = {
-    value:86,
+    value: 86,
   }
 
   return (
     <div>
-      <NewProgressRing {...pieProps}/>
+      <NewProgressRing {...pieProps} />
     </div>
   )
 }

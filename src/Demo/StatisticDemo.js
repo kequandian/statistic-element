@@ -1,4 +1,4 @@
-import Statistic from '../components/statistic';
+import Statistic from '@/statistic';
 
 const StatisticDemo = ({
 

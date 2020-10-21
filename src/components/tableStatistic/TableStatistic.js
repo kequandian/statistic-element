@@ -34,7 +34,6 @@ class TableStatistic extends React.Component {
   }
 
   selectedRows = (value) => {
-    console.log('kkkkkk value = ',value);
     this.setState({
       selectedRowKeys: value.selectedRowKeys,
       selectedRows: value.selectedRows,
@@ -58,7 +57,6 @@ class TableStatistic extends React.Component {
 
     const rowSelection = {
       onChange: (selectedRowKeys, selectedRows) => {
-        console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows,selectedRowKeys);
         const data = {
           selectedRows,
           selectedRowKeys

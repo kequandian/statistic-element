@@ -15,20 +15,23 @@
 
 
 import React from 'react';
-import { Icon } from 'antd';
+import {
+  ArrowUpOutlined,
+  ArrowDownOutlined,
+} from '@ant-design/icons';
 
 class ColumnChain extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
 
     }
   }
 
-  render(){
+  render() {
 
-    const { title,subTitle,value,note,iconType } = this.props;
+    const { title, subTitle, value, note, iconType } = this.props;
 
     const style = {
       display: 'flex',
@@ -72,13 +75,15 @@ class ColumnChain extends React.Component {
       <div style={style}>
         <div style={titleStyle}>{title}</div>
         <div style={valueStyle}>{value}</div>
-        { subTitle ?
+        {subTitle ?
           (<div style={subTitleStyle}>昨日：{subTitle}</div>)
-          : null }
-        { note ?
+          : null}
+        {note ?
           <div style={noteStyle}>
             下降：{note}
-            <Icon type= { iconType && iconType == 'up' ? 'arrow-up' : 'arrow-down'} style={iconStyle}/>
+            {iconType && iconType == 'up' ?
+              <ArrowUpOutlined style={iconStyle} /> :
+              <ArrowDownOutlined style={iconStyle} />}
           </div>
           : null
         }

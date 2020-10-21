@@ -1,4 +1,4 @@
-import Instrument from '../components/instrument/Instrument';
+import Instrument from '@/components/instrument/Instrument';
 
 const InstrumentDemo = ({}) => {
 
