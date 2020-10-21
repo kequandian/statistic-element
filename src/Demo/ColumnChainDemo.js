@@ -1,3 +1,4 @@
+import React from 'react';
 import ColumnChain from '@/components/columnChain/ColumnChain';
 
 const ColumnChainDemo = ({}) => {

@@ -1,3 +1,11 @@
-import Statistic from '@/statistic';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-export default Statistic;
+import StatisticDemo from '@/Demo/StatisticDemo';
+
+function Test() {
+  return 'TEst'
+}
+
+ReactDOM.render(<StatisticDemo />, document.getElementById("root"));
+// ReactDOM.render(<StatisticDemo />, document.getElementById("root"));

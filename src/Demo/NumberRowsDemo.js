@@ -1,3 +1,4 @@
+import React from 'react';
 import NumberRows from '@/components/numberRows/NumberRows';
 import ColumnChain from '@/components/columnChain/ColumnChain';
 import LineGrid from '@/components/lineGrid/LineGrid';

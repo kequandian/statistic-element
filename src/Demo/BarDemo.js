@@ -1,3 +1,4 @@
+import React from 'react';
 import Bar from '@/components/general-chart/Bar';
 
 const BarDemo = ({}) => {

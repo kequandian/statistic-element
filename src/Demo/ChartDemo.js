@@ -1,3 +1,4 @@
+import React from 'react';
 import Chart, { regQueryMethod } from '@/Chart';
 
 // regQueryMethod(func);  // 项目入口注册一个 发起 GET 的方法

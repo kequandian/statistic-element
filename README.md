@@ -1,4 +1,8 @@
 
+```shell
+npm install
+npm start
+```
 ## FineBI 报表服务 
 > 需学习如何系统集成
 

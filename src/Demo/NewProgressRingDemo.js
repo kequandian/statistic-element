@@ -1,3 +1,4 @@
+import React from 'react';
 import { NewProgressRing } from '../export';
 
 const NewProgressRingDemo = ({ }) => {
