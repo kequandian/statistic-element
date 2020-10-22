@@ -8,7 +8,7 @@
 */
 import React, { Component } from 'react';
 import { Spin } from 'antd';
-import Statistic from '@/statistic';
+import Statistic from '@/Statistic';
 
 let queryMethod;
 
@@ -83,10 +83,18 @@ export default class Chart extends Component {
 
           return false;
         }
+      }).catch(_ => {
+        this.setState({
+          errorMsg: '网络错误',
+          loading: false,
+          update: false,
+        })
       })
     } else {
       this.setState({
         errorMsg: 'queryMethod 未注册',
+        loading: false,
+        update: false,
       });
     }
 

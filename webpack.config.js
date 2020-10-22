@@ -1,6 +1,10 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = {
+  devServer: {
+    port: 8000,
+    overlay: true
+  },
   module: {
     rules: [
       {

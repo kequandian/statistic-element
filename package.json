@@ -4,7 +4,7 @@
   "description": "Kequandian Statistic Element",
   "main": "src/index.js",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --progress",
     "clean": "rimraf lib/",
     "build": "npm run clean && gulp"
   },
