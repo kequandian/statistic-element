@@ -1,25 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { regQueryMethod } from '@/Chart';
-import Chart from '@/Demo/ChartDemo';
-
-regQueryMethod(PromiseAjax);
-
+import APIContainer from '@/APIContainer';
+import Statistic from '@/Statistic';
 
 ReactDOM.render(
-  <Chart group="stat:profit" />
+  <APIContainer
+    API={'http://test.com/api/test'}
+    query={PromiseAjax}
+    queryData={{
+      extraData: 'test',
+    }}
+  >
+    <Statistic />
+  </APIContainer>
   , document.getElementById("root")
 );
 
 
-let hostName = ''; // 示例: http://192.168.1.2/
+
 function PromiseAjax(url, data, options = {}) {
   const { method = 'GET', async = true } = options;
 
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
-    xhr.open(method, `${hostName}${url}`, async);
+    xhr.open(method, url, async);
     xhr.responseType = 'JSON';
 
     xhr.onreadystatechange = () => {
