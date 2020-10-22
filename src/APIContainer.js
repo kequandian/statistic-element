@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, query, children } = props;
+  const { API, queryData, query, children } = props;
 
   useEffect(_ => {
     query(API, queryData)
