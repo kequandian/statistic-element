@@ -13,7 +13,11 @@ import React from 'react';
  * </GetField>
  */
 export default function GetField({ children, dataField, ...rest }) {
-  const data = rest[dataField] || {};
+  let data = rest[dataField] || {};
+
+  if (Array.isArray(data)) {
+    data = data[0];
+  }
 
   return React.cloneElement(children, {
     ...rest,
