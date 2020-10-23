@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
+/**
+ * 
+ * @param {boolean} extend 从 API 获取的数据, 是展开后传给子组件, 还是作为 data 传给子组件
+ */
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, queryData, children } = props;
+  const { API, queryData, extend = true, children, ...rest } = props;
 
   useEffect(_ => {
     promiseAjax(API, queryData)
@@ -16,16 +20,25 @@ export default function APIContainer(props) {
   }, []);
 
   return React.cloneElement(children, {
-    data: data,
+    ...(extend ? { ...data } : { data }),
+    ...rest,
   })
 }
 
 function promiseAjax(url, data, options = {}) {
   const { method = 'GET', async = true } = options;
 
+  let param;
+  let payload;
+  if (method === 'GET') {
+    param = `?${Object.keys(data).map(key => `${key}=${data[key]}`).join('&')}`;
+  } else {
+    payload = data;
+  }
+
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
-    xhr.open(method, url, async);
+    xhr.open(method, `${url}${param}`, async);
     xhr.responseType = 'JSON';
 
     xhr.onreadystatechange = () => {
@@ -51,6 +64,6 @@ function promiseAjax(url, data, options = {}) {
       reject(err);
     }
 
-    xhr.send(data);
+    xhr.send(payload);
   })
 }

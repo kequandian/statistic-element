@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import APIContainer from '@/APIContainer';
-import Statistic from '@/Statistic';
+import AutoChart from '@/APIContainer/AutoChart';
 
 ReactDOM.render(
   <APIContainer
@@ -11,7 +11,7 @@ ReactDOM.render(
       extraData: 'test',
     }}
   >
-    <Statistic />
+    <AutoChart />
   </APIContainer>
   , document.getElementById("root")
 );
