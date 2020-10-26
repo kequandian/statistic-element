@@ -14,7 +14,7 @@
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
 
-class Pie extends React.Component {
+class NightingaleIsRoseDiagramPie extends React.Component {
 
   constructor(props){
     super(props);
@@ -25,16 +25,23 @@ class Pie extends React.Component {
 
   render(){
 
-    const { title,series,echart } = this.props;
+    const { title, series, echart } = this.props;
+    // let series = [];
+    // if(Array.isArray(rates)){
+    //   series = rates;
+    // }else{
+    //   console.log('rates 返回的数据不是一个数组!');
+    // }
 
     let newLegend = [];
-    if(series && series.length > 0) {
+    if(series[0].data && series[0].data.length > 0) {
       if(series[0].data && series[0].data.length > 0){
         series[0].data.map((item,index) => {
           newLegend.push(item.name)
         })
       }
     }
+    console.log('newLegend = ', newLegend);
 
     series && series.length > 0 && series.map((item,index) => {
       series[index] = {
@@ -46,6 +53,7 @@ class Pie extends React.Component {
       }
       //获取legend
     })
+    console.log('series = ', series);
 
     var getOption = () => {
       return {
@@ -98,4 +106,4 @@ class Pie extends React.Component {
   }
 }
 
-export default Pie;
+export default NightingaleIsRoseDiagramPie;
