@@ -12,6 +12,10 @@ import Radar from '@/components/radar/Radar';
 import Instrument from '@/components/instrument/Instrument';
 import TableStatistic from '@/components/tableStatistic/TableStatistic';
 import NewProgressRing from '@/components/newProgress/NewProgressRing';
+import MonthReportDemo from '@/Demo/MonthReportDemo';
+import SpecialLabelPieDemo from '@/Demo/SpecialLabelPieDemo';
+
+
 
 export {
   Chart,
@@ -27,5 +31,7 @@ export {
   Radar,
   Instrument,
   TableStatistic,
-  NewProgressRing
+  NewProgressRing,
+  MonthReportDemo,
+  SpecialLabelPieDemo
 };

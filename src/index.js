@@ -8,10 +8,12 @@ import ColumnChainDemo from './Demo/ColumnChainDemo';
 import SpecialLabelPieDemo from  './Demo/SpecialLabelPieDemo';
 import NumberRowsDemo from './Demo/NumberRowsDemo';
 import ColumnTotalDemo from './Demo/ColumnTotalDemo';
+import MonthReportDemo from './Demo/MonthReportDemo';
 
 //ip
 const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080'];
 let ipAddress = ipList[1];
+
 
 // ReactDOM.render(
 //   <APIContainer
@@ -44,18 +46,30 @@ let ipAddress = ipList[1];
 //   , document.getElementById("root")
 // );
 
-//
+//柱状图
+// ReactDOM.render(
+//   <APIContainer
+//     API={`http://${ipAddress}/api/adm/stat/meta/mon`}
+//     queryData={{
+//       pattern: 'TimeLine',
+//     }}
+//   >
+//     <GetField dataField='data'>
+//       <MonthReportDemo/>
+//     </GetField>
+//   </APIContainer>
+//   , document.getElementById("root")
+// );
+
+//组合
 ReactDOM.render(
   <APIContainer
-    API={`http://${ipAddress}/api/adm/stat/meta/orderStatePie`}
+    API={`http://${ipAddress}/api/adm/stat/meta/template/simple`}
     queryData={{
-      pattern: 'rate',
+      pattern: '',
     }}
   >
-    {/* <AutoChart /> */}
-    <GetField dataField='data'>
-      <ColumnTotalDemo/>
-    </GetField>
+      <AutoChart/>
   </APIContainer>
   , document.getElementById("root")
 );

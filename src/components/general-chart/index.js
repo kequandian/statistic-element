@@ -53,7 +53,7 @@ export default function GeneralChartWrapped(defaultOption, formatOption = false)
       this.axis = [];
       this.seriesData = []; // series.data
       const { rates, axis, series } = this.props;
-      if (series) {
+      if(series){
         // 一个图表里面有多种数据
         this.legendList = [];
         this.axis = axis;
@@ -61,8 +61,8 @@ export default function GeneralChartWrapped(defaultOption, formatOption = false)
           this.legendList.push(item.name);
           return {
             type: CHART,
-            ...item,
             ...echartSeries,
+            ...item,
           }
         } )
       } else {
@@ -122,6 +122,8 @@ export default function GeneralChartWrapped(defaultOption, formatOption = false)
         ...restDefaultOptio,
         ...restEchart,
       };
+      
+      // console.log("option = ", option);
 
       if (levelDisplay === true) {
         option = {
