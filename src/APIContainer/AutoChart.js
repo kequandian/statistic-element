@@ -9,7 +9,17 @@ export default function AutoChart(props) {
     return '未传入 children 或传入的 children 非数组';
   }
 
-  return <NamedLayout {...layout}>
+  let layoutConfig = {};
+
+  if (typeof layout === 'string') {
+    layoutConfig = {
+      name: layout,
+    };
+  } else {
+    layoutConfig = { ...layout };
+  }
+
+  return <NamedLayout {...layoutConfig}>
     {children.map(child => {
       const { presenter, field } = child;
       const chartName = presenter.replace(/^\S/, s => s.toUpperCase());
