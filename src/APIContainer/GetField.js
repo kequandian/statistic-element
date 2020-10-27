@@ -12,11 +12,11 @@ import React from 'react';
  * 
  * </GetField>
  */
-export default function GetField({ children, dataField, ...rest }) {
+export default function GetField({ children, dataField, itemIndex = 0, ...rest }) {
   let data = rest[dataField] || {};
 
   if (Array.isArray(data)) {
-    data = data[0];
+    data = data[itemIndex];
   }
 
   console.log('children = ', children);
