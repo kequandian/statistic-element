@@ -14,7 +14,7 @@ import TableStatistic from '@/components/tableStatistic/TableStatistic';
 import NewProgressRing from '@/components/newProgress/NewProgressRing';
 import MonthReportDemo from '@/Demo/MonthReportDemo';
 import SpecialLabelPieDemo from '@/Demo/SpecialLabelPieDemo';
-import SingleColumnChainDemo from '@/Demo/SingleColumnChainDemo';
+import SingleColumnTatalDemo from '@/Demo/SingleColumnTatalDemo';
 
 
 
@@ -35,5 +35,5 @@ export {
   NewProgressRing,
   MonthReportDemo,
   SpecialLabelPieDemo,
-  SingleColumnChainDemo
+  SingleColumnTatalDemo
 };

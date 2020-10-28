@@ -9,26 +9,26 @@ import SpecialLabelPieDemo from  './Demo/SpecialLabelPieDemo';
 import NumberRowsDemo from './Demo/NumberRowsDemo';
 import ColumnTotalDemo from './Demo/ColumnTotalDemo';
 import MonthReportDemo from './Demo/MonthReportDemo';
-import SingleColumnChainDemo from './Demo/SingleColumnChainDemo';
+import SingleColumnChainDemo from './Demo/SingleColumnTatalDemo';
 
 //ip
-const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080'];
-let ipAddress = ipList[1];
+const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080','192.168.3.155:8085'];
+let ipAddress = ipList[2];
 
 //count
-ReactDOM.render(
-  <APIContainer
-    API={`http://${ipAddress}/api/adm/stat/meta/advertiserTotal`}
-    queryData={{
-      pattern: 'count',
-    }}
-  >
-    <GetField dataField='rates'>
-      <SingleColumnChainDemo/>
-    </GetField>
-  </APIContainer>
-  , document.getElementById("root")
-);
+// ReactDOM.render(
+//   <APIContainer
+//     API={`http://${ipAddress}/api/adm/stat/meta/advertiserTotal`}
+//     queryData={{
+//       pattern: 'count',
+//     }}
+//   >
+//     <GetField dataField='rates'>
+//       <SingleColumnTatalDemo/>
+//     </GetField>
+//   </APIContainer>
+//   , document.getElementById("root")
+// );
 
 //饼图
 // ReactDOM.render(
@@ -62,14 +62,14 @@ ReactDOM.render(
 // );
 
 //组合
-// ReactDOM.render(
-//   <APIContainer
-//     API={`http://${ipAddress}/api/adm/stat/meta/template/simple`}
-//     queryData={{
-//       pattern: '',
-//     }}
-//   >
-//       <AutoChart/>
-//   </APIContainer>
-//   , document.getElementById("root")
-// );
+ReactDOM.render(
+  <APIContainer
+    API={`http://${ipAddress}/api/adm/stat/meta/template/advertiser`}
+    queryData={{
+      pattern: '',
+    }}
+  >
+      <AutoChart/>
+  </APIContainer>
+  , document.getElementById("root")
+);

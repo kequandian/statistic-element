@@ -19,10 +19,6 @@ export default function GetField({ children, dataField, itemIndex = 0, ...rest }
     data = data[itemIndex];
   }
 
-  console.log('children = ', children);
-  console.log('data = ', data);
-  console.log('rest = ', rest);
-
   return React.cloneElement(children, {
     ...rest,
     ...data,

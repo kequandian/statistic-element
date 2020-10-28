@@ -2,18 +2,17 @@ import React from 'react';
 import ColumnChain from '@/components/columnChain/ColumnChain';
 
 const SingleColumnTatalDemo = ({
-    field,
-    name,
-    pattern,
-    title,
-    value,
-    chart,
-    span
+  rates
 }) => {
+  
+  let item = {};
+  if(Array.isArray(rates)){
+    item = rates[0];
+  }
 
   const ColumnChainProps = {
-    title: name,
-    value: value,
+    title: item.name,
+    value: item.value,
   }
 
   return (
