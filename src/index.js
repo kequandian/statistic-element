@@ -63,13 +63,13 @@ let ipAddress = ipList[2];
 
 //组合
 ReactDOM.render(
-  <APIContainer
-    API={`http://${ipAddress}/api/adm/stat/meta/template/advertiser`}
-    queryData={{
-      pattern: '',
-    }}
-  >
-      <AutoChart/>
-  </APIContainer>
+    <APIContainer
+        API={`http://${ipAddress}/api/adm/stat/meta/template/cinema`}
+        queryData={{
+          orgId: '100000000000000094',
+        }}
+      >
+          <AutoChart/>
+    </APIContainer>
   , document.getElementById("root")
 );
