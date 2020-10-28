@@ -1,7 +1,9 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
-export default ({ children, col }) => {
+export default ({ children, props = {} }) => {
+  const { col } = props;
+
   return <Row type="flex" justify="space-between" align="middle">
     {React.Children.map(children, child => {
       return <Col sm={computeSpan(col)}>
