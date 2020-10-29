@@ -6,7 +6,8 @@ export default {
       "layout": {
         "name": "Grid",
         "props": {
-          "col": 4
+          "col": 4,
+          "justify": "center"
         }
       },
       "cinemaThisYearOrder": {
@@ -40,43 +41,50 @@ export default {
           "span": 1,
           "seq": 1,
           "presenter": "SingleColumnTatalDemo",
-          "field": "cinemaOrderTotal"
+          "field": "cinemaOrderTotal",
+          "title": null
         },
         {
           "span": 1,
           "seq": 2,
           "presenter": "SingleColumnTatalDemo",
-          "field": "cinemaThisYearOrder"
+          "field": "cinemaThisYearOrder",
+          "title": null
         },
         {
           "span": 1,
           "seq": 3,
           "presenter": "SingleColumnTatalDemo",
-          "field": "cinemaThisMonthOrder"
+          "field": "cinemaThisMonthOrder",
+          "title": null
         },
         {
           "span": 1,
           "seq": 4,
           "presenter": "SingleColumnTatalDemo",
-          "field": "cinemaOrderBudget"
+          "field": "cinemaOrderBudget",
+          "title": ""
         },
         {
           "span": 4,
           "seq": 5,
           "presenter": "MonthReportDemo",
-          "field": "cinemaOrderTaskMonthlyCount"
+          "field": "cinemaOrderTaskMonthlyCount",
+          "title": "订单月度统计"
         },
         {
           "span": 4,
           "seq": 6,
           "presenter": "MonthReportDemo",
-          "field": "cinemaOrderTaskMonthlyBudgetCount"
+          "field": "cinemaOrderTaskMonthlyBudgetCount",
+          "title": "订单月度预算统计"
         },
         {
           "span": 2,
           "seq": 7,
           "presenter": "SpecialLabelPieDemo",
-          "field": "orderTaskStatusRate"
+          "field": "orderTaskStatusRate",
+          "title": "执行订单状态占比"
         }
       ],
       "cinemaOrderTaskMonthlyCount": {

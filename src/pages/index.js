@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
 
 import APIContainer from '@/APIContainer';
 import AutoChart from '@/APIContainer/AutoChart';
