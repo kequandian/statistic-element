@@ -23,7 +23,7 @@ export default function AutoChart(props) {
 
   return <NamedLayout {...layoutConfig}>
     {children.map(child => {
-      const { presenter, field } = child;
+      const { presenter, field, span } = child;
       const chartName = presenter.replace(/^\S/, s => s.toUpperCase());
       const Chart = chartSet[chartName] || Tips(chartName);
       const data = props[field] || {};
@@ -32,7 +32,7 @@ export default function AutoChart(props) {
         console.warn(`未能读取到数据 field: ${field}`, props);
       }
 
-      return <Chart key={field} {...data} />
+      return <Chart key={field} {...data} span={span} />
     })}
   </NamedLayout>
 }

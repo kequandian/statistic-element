@@ -72,17 +72,3 @@ export default function () {
 //   </APIContainer>
 //   , document.getElementById("root")
 // );
-
-//组合
-ReactDOM.render(
-    <APIContainer
-        API={`http://${ipAddress}/api/adm/stat/meta/template/cinema`}
-        queryData={{
-          orgId: '100000000000000094',
-        }}
-      >
-          <AutoChart/>
-    </APIContainer>
-  , document.getElementById("root")
-);
-

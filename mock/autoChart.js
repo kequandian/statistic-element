@@ -16,7 +16,7 @@ export default {
             "name": "影院今年订单数量",
             "pattern": "Count",
             "title": "影院今年订单数量",
-            "value": "5",
+            "value": "0",
             "chart": "BarTimeline",
             "span": "1"
           }
@@ -29,7 +29,7 @@ export default {
             "name": "影院总营业金额",
             "pattern": "Count",
             "title": "影院总营业金额",
-            "value": "45800.00",
+            "value": null,
             "chart": "BarTimeline",
             "span": "1"
           }
@@ -37,36 +37,43 @@ export default {
       },
       "children": [
         {
+          "span": 1,
           "seq": 1,
           "presenter": "SingleColumnTatalDemo",
           "field": "cinemaOrderTotal"
         },
         {
+          "span": 1,
           "seq": 2,
           "presenter": "SingleColumnTatalDemo",
           "field": "cinemaThisYearOrder"
         },
         {
+          "span": 1,
           "seq": 3,
           "presenter": "SingleColumnTatalDemo",
           "field": "cinemaThisMonthOrder"
         },
         {
+          "span": 1,
           "seq": 4,
           "presenter": "SingleColumnTatalDemo",
           "field": "cinemaOrderBudget"
         },
         {
+          "span": 4,
           "seq": 5,
           "presenter": "MonthReportDemo",
           "field": "cinemaOrderTaskMonthlyCount"
         },
         {
+          "span": 4,
           "seq": 6,
           "presenter": "MonthReportDemo",
           "field": "cinemaOrderTaskMonthlyBudgetCount"
         },
         {
+          "span": 2,
           "seq": 7,
           "presenter": "SpecialLabelPieDemo",
           "field": "orderTaskStatusRate"
@@ -75,13 +82,7 @@ export default {
       "cinemaOrderTaskMonthlyCount": {
         "identifier": "",
         "field": "cinemaOrderTaskMonthlyCount",
-        "rates": [
-          {
-            "name": "2020-10",
-            "value": "8",
-            "seq": "10"
-          }
-        ],
+        "rates": [],
         "name": null,
         "pattern": "Rate",
         "tl": "",
@@ -130,7 +131,7 @@ export default {
             "name": "影院总订单数量",
             "pattern": "Count",
             "title": "影院总订单数量",
-            "value": "8",
+            "value": "0",
             "chart": "BarTimeline",
             "span": "1"
           }
@@ -216,7 +217,7 @@ export default {
             "name": "影院当月订单数据",
             "pattern": "Count",
             "title": "影院当月订单数据",
-            "value": "5",
+            "value": "0",
             "chart": "BarTimeline",
             "span": "1"
           }
