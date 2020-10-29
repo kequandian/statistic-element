@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
 
 import APIContainer from '@/APIContainer';
 import AutoChart from '@/APIContainer/AutoChart';
@@ -15,16 +16,16 @@ import SingleColumnChainDemo from '@/Demo/SingleColumnTatalDemo';
 const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085'];
 let ipAddress = ipList[2];
 
-export default function () {
-  return <APIContainer
-    API={`/api/adm/stat/meta/template/advertiser`}
-    queryData={{
-      pattern: '',
-    }}
-  >
-    <AutoChart />
-  </APIContainer>
-}
+// export default function () {
+//   return <APIContainer
+//     API={`/api/adm/stat/meta/template/advertiser`}
+//     queryData={{
+//       pattern: '',
+//     }}
+//   >
+//     <AutoChart />
+//   </APIContainer>
+// }
 
 //count
 // ReactDOM.render(
@@ -71,3 +72,14 @@ export default function () {
 //   </APIContainer>
 //   , document.getElementById("root")
 // );
+
+export default function () {
+  return <APIContainer
+    API={`http://192.168.3.155:8088/api/adm/stat/meta/template/advertiser`}
+    queryData={{
+      advertiserId: '1',
+    }}
+  >
+    <AutoChart />
+  </APIContainer>
+}

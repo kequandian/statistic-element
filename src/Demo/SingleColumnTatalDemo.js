@@ -16,7 +16,8 @@ const SingleColumnTatalDemo = ({
   }
 
   return (
-    <div style={{display: 'flex'}}>
+    <div style={{
+      display: 'flex', marginTop:'70px', marginBottom:'70px', background:'#f2f2f3', justifyContent: 'center'}}>
       <ColumnChain {...ColumnChainProps}/>
     </div>
   )

@@ -24,7 +24,7 @@ const SpecialLabelPieDemo = ({
   }
 
   return (
-    <div>
+    <div >
       <LineGrid>
         <Pie {...pieProps}/>
       </LineGrid>
