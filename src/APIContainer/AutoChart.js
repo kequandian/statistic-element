@@ -6,7 +6,9 @@ export default function AutoChart(props) {
   const { layout, children } = props;
 
   if (!Array.isArray(children)) {
-    return '未传入 children 或传入的 children 非数组';
+    console.warn('未传入 children 或传入的 children 非数组. props: ', props);
+
+    return null;
   }
 
   let layoutConfig = {};
