@@ -4,17 +4,28 @@ import 'antd/dist/antd.css';
 
 import APIContainer from '@/APIContainer';
 import AutoChart from '@/APIContainer/AutoChart';
-import GetField from  './APIContainer/GetField';
-import ColumnChainDemo from './Demo/ColumnChainDemo';
-import SpecialLabelPieDemo from  './Demo/SpecialLabelPieDemo';
-import NumberRowsDemo from './Demo/NumberRowsDemo';
-import ColumnTotalDemo from './Demo/ColumnTotalDemo';
-import MonthReportDemo from './Demo/MonthReportDemo';
-import SingleColumnChainDemo from './Demo/SingleColumnTatalDemo';
+import GetField from '@/APIContainer/GetField';
+import ColumnChainDemo from '@/Demo/ColumnChainDemo';
+import SpecialLabelPieDemo from '@/Demo/SpecialLabelPieDemo';
+import NumberRowsDemo from '@/Demo/NumberRowsDemo';
+import ColumnTotalDemo from '@/Demo/ColumnTotalDemo';
+import MonthReportDemo from '@/Demo/MonthReportDemo';
+import SingleColumnChainDemo from '@/Demo/SingleColumnTatalDemo';
 
 //ip
-const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080','192.168.3.155:8085'];
+const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085'];
 let ipAddress = ipList[2];
+
+export default function () {
+  return <APIContainer
+    API={`/api/adm/stat/meta/template/advertiser`}
+    queryData={{
+      pattern: '',
+    }}
+  >
+    <AutoChart />
+  </APIContainer>
+}
 
 //count
 // ReactDOM.render(
@@ -61,16 +72,3 @@ let ipAddress = ipList[2];
 //   </APIContainer>
 //   , document.getElementById("root")
 // );
-
-//组合
-ReactDOM.render(
-  <APIContainer
-    API={`http://${ipAddress}/api/adm/stat/meta/template/advertiser`}
-    queryData={{
-      pattern: '',
-    }}
-  >
-      <AutoChart/>
-  </APIContainer>
-  , document.getElementById("root")
-);
