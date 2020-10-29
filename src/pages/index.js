@@ -1,19 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'antd/dist/antd.css';
 
 import APIContainer from '@/APIContainer';
 import AutoChart from '@/APIContainer/AutoChart';
-import GetField from  './APIContainer/GetField';
-import ColumnChainDemo from './Demo/ColumnChainDemo';
-import SpecialLabelPieDemo from  './Demo/SpecialLabelPieDemo';
-import NumberRowsDemo from './Demo/NumberRowsDemo';
-import ColumnTotalDemo from './Demo/ColumnTotalDemo';
-import MonthReportDemo from './Demo/MonthReportDemo';
-import SingleColumnChainDemo from './Demo/SingleColumnTatalDemo';
+import GetField from '@/APIContainer/GetField';
+import ColumnChainDemo from '@/Demo/ColumnChainDemo';
+import SpecialLabelPieDemo from '@/Demo/SpecialLabelPieDemo';
+import NumberRowsDemo from '@/Demo/NumberRowsDemo';
+import ColumnTotalDemo from '@/Demo/ColumnTotalDemo';
+import MonthReportDemo from '@/Demo/MonthReportDemo';
+import SingleColumnChainDemo from '@/Demo/SingleColumnTatalDemo';
 
 //ip
-const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080','192.168.3.155:8085'];
+const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085'];
 let ipAddress = ipList[2];
+
+export default function () {
+  return <APIContainer
+    API={`/api/adm/stat/meta/template/advertiser`}
+    queryData={{
+      pattern: '',
+    }}
+  >
+    <AutoChart />
+  </APIContainer>
+}
 
 //count
 // ReactDOM.render(
@@ -73,3 +85,4 @@ ReactDOM.render(
     </APIContainer>
   , document.getElementById("root")
 );
+
