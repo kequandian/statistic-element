@@ -1,4 +1,4 @@
-import ShadowCartDecorator from './ShadowCartDecorator';
+import ShadowCartDecorator from '@/components/Decorator/ShadowCartDecorator';
 
 export {
   ShadowCartDecorator,

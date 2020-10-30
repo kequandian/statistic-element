@@ -12,9 +12,10 @@ import Radar from '@/components/radar/Radar';
 import Instrument from '@/components/instrument/Instrument';
 import TableStatistic from '@/components/tableStatistic/TableStatistic';
 import NewProgressRing from '@/components/newProgress/NewProgressRing';
-import MonthReportDemo from '@/Demo/MonthReportDemo';
-import SpecialLabelPieDemo from '@/Demo/SpecialLabelPieDemo';
-import SingleColumnTatalDemo from '@/Demo/SingleColumnTatalDemo';
+import MonthReport from '@/Demo/MonthReportDemo';
+import SpecialLabelPie from '@/Demo/SpecialLabelPieDemo';
+import SingleColumnTatal from '@/Demo/SingleColumnTatalDemo';
+import AutoChart from '@/APIContainer/AutoChart';
 
 
 
@@ -33,7 +34,8 @@ export {
   Instrument,
   TableStatistic,
   NewProgressRing,
-  MonthReportDemo,
-  SpecialLabelPieDemo,
-  SingleColumnTatalDemo
+  MonthReport,
+  SpecialLabelPie,
+  SingleColumnTatal,
+  AutoChart
 };

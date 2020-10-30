@@ -1,5 +1,6 @@
 import React from 'react';
 import ColumnChain from '@/components/columnChain/ColumnChain';
+import {ShadowCartDecorator} from '@/components/Decorator';
 
 const SingleColumnTatalDemo = ({
   rates
@@ -17,8 +18,10 @@ const SingleColumnTatalDemo = ({
 
   return (
     <div style={{
-      display: 'flex', marginTop:'70px', marginBottom:'70px', background:'#f2f2f3', justifyContent: 'center'}}>
-      <ColumnChain {...ColumnChainProps}/>
+      display: 'flex', margin:'12px 8px', justifyContent: 'center'}}>
+        <ShadowCartDecorator>
+          <ColumnChain {...ColumnChainProps}/>
+        </ShadowCartDecorator>
     </div>
   )
 }

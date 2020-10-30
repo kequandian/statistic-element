@@ -22,10 +22,12 @@ const SpecialLabelPieDemo = ({
         },
     ]
   }
+  
+  const lineGridProps = {span:24}
 
   return (
     <div >
-      <LineGrid>
+      <LineGrid lineGridProps={lineGridProps}>
         <Pie {...pieProps}/>
       </LineGrid>
     </div>

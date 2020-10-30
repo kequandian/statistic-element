@@ -77,7 +77,7 @@ export default function () {
   return <APIContainer
     API={`http://192.168.3.155:8088/api/adm/stat/meta/template/advertiser`}
     queryData={{
-      advertiserId: '1',
+      advertiserId:1
     }}
   >
     <AutoChart />

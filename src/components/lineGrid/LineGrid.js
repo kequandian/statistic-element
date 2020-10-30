@@ -15,6 +15,7 @@ import { Row, Col } from 'antd';
 
 const LineGrid = ({
   children,
+  lineGridProps,
 }) => {
 
   if(Array.isArray(children) == true && children.length > 0){
@@ -31,13 +32,17 @@ const LineGrid = ({
       )
   });
 
+  const isNotArray = (children) => {
+    return lineGridProps? lineGridProps.span : children&&children.props&&children.props.span ? 6*children.props.span : 6 ;
+  }
+
   return(
     <div>
       <Row type='flex' justify="start">
         {createList(children)}
         {
           children != undefined && Array.isArray(children) == false ?
-          <Col span={children&&children.props&&children.props.span ? 6*children.props.span : 6} style={{margin: '8px 0'}}>{children}</Col>
+          <Col span={isNotArray(children)} style={{margin: '8px 0'}}>{children}</Col>
           : null
         }
       </Row>
