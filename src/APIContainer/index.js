@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import formatData from './formatData';
+import { query } from 'zero-element-antd/lib/utils/request';
 
 /**
  * 
@@ -10,17 +11,17 @@ export default function APIContainer(props) {
   const { API, queryData = {}, extend = true, children, ...rest } = props;
 
   useEffect(_ => {
-    promiseAjax(API, queryData)
+    query(API, queryData)
       .then(responseData => {
         console.log('request rst: ', responseData);
 
-        if (responseData && responseData.code === 200) {
-          const list = formatData(responseData.data);
+        if (responseData) {
+          const list = formatData(responseData);
           setData({
             list: list,
-            layout: responseData.data.layout,
-            span: responseData.data.span,
-            title: responseData.data.title,
+            layout: responseData.layout,
+            span: responseData.span,
+            title: responseData.title,
           });
         }
       })
@@ -29,48 +30,5 @@ export default function APIContainer(props) {
   return React.cloneElement(children, {
     ...(extend ? { ...data } : { data }),
     ...rest,
-  })
-}
-
-function promiseAjax(url, data, options = {}) {
-  const { method = 'GET', async = true } = options;
-
-  let param;
-  let payload;
-  if (method === 'GET') {
-    param = `?${Object.keys(data).map(key => `${key}=${data[key]}`).join('&')}`;
-  } else {
-    payload = data;
-  }
-
-  return new Promise((resolve, reject) => {
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, `${url}${param}`, async);
-    xhr.responseType = 'JSON';
-
-    xhr.onreadystatechange = () => {
-
-      if (xhr.readyState !== 4) {
-        return;
-      }
-
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        let result
-        try {
-          result = JSON.parse(xhr.responseText);
-          resolve(result);
-
-        } catch (error) {
-          reject("返回的数据非 json 格式");
-        }
-      } else {
-        reject(xhr.statusText);
-      }
-    }
-    xhr.onerror = (err) => {
-      reject(err);
-    }
-
-    xhr.send(payload);
   })
 }
