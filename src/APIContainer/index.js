@@ -9,8 +9,6 @@ export default function APIContainer(props) {
   const [data, setData] = useState({});
   const { API, queryData = {}, token, extend = true, children, ...rest } = props;
 
-  console.log('props = ', props)
-
   useEffect(_ => {
     promiseAjax(API, queryData, token)
       .then(responseData => {
@@ -44,7 +42,6 @@ function promiseAjax(url, data, token, options = {} ) {
   } else {
     payload = data;
   }
-  console.log('token = ', token)
 
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
