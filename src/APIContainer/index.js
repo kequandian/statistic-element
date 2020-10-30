@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import formatData from './formatData';
 
 /**
  * 
@@ -6,7 +7,7 @@ import React, { useState, useEffect } from 'react';
  */
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, queryData, extend = true, children, ...rest } = props;
+  const { API, queryData = {}, extend = true, children, ...rest } = props;
 
   useEffect(_ => {
     promiseAjax(API, queryData)
@@ -14,7 +15,13 @@ export default function APIContainer(props) {
         console.log('request rst: ', responseData);
 
         if (responseData && responseData.code === 200) {
-          setData(responseData.data);
+          const list = formatData(responseData.data);
+          setData({
+            list: list,
+            layout: responseData.data.layout,
+            span: responseData.data.span,
+            title: responseData.data.title,
+          });
         }
       })
   }, []);

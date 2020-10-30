@@ -3,34 +3,19 @@ import * as chartSet from '@/export';
 import NamedLayout from './NamedLayout';
 
 export default function AutoChart(props) {
-  const { layout, children } = props;
+  const { layout, children, list } = props;
 
-  if (!Array.isArray(children)) {
+  const data = list || children;
+  if (!Array.isArray(data)) {
     console.warn('未传入 children 或传入的 children 非数组. props: ', props);
 
     return null;
   }
 
-  let layoutConfig = {};
-
-  if (typeof layout === 'string') {
-    layoutConfig = {
-      name: layout,
-    };
-  } else {
-    layoutConfig = { ...layout };
-  }
-
-  return <NamedLayout {...layoutConfig}>
-    {children.map(child => {
-      const { presenter, field } = child;
-      const chartName = presenter.replace(/^\S/, s => s.toUpperCase());
-      const Chart = chartSet[chartName] || Tips(chartName);
-      const data = props[field] || {};
-
-      if (!props[field]) {
-        console.warn(`未能读取到数据 field: ${field}`, props);
-      }
+  return <NamedLayout props={layout}>
+    {data.map(child => {
+      const { presenter, field, data } = child;
+      const Chart = chartSet[presenter] || Tips(presenter);
 
       return <Chart key={field} {...data} />
     })}
