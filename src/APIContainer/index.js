@@ -7,10 +7,12 @@ import formatData from './formatData';
  */
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, queryData = {}, extend = true, children, ...rest } = props;
+  const { API, queryData = {}, token, extend = true, children, ...rest } = props;
+
+  console.log('props = ', props)
 
   useEffect(_ => {
-    promiseAjax(API, queryData)
+    promiseAjax(API, queryData, token)
       .then(responseData => {
         console.log('request rst: ', responseData);
 
@@ -32,7 +34,7 @@ export default function APIContainer(props) {
   })
 }
 
-function promiseAjax(url, data, options = {}) {
+function promiseAjax(url, data, token, options = {} ) {
   const { method = 'GET', async = true } = options;
 
   let param;
@@ -42,10 +44,16 @@ function promiseAjax(url, data, options = {}) {
   } else {
     payload = data;
   }
+  console.log('token = ', token)
 
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open(method, `${url}${param}`, async);
+    
+    if(token){
+      xhr.setRequestHeader("Authorization", `Bearer ${token}`);
+    }
+
     xhr.responseType = 'JSON';
 
     xhr.onreadystatechange = () => {

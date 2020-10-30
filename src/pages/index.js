@@ -13,8 +13,8 @@ import MonthReportDemo from '@/Demo/MonthReportDemo';
 import SingleColumnChainDemo from '@/Demo/SingleColumnTatalDemo';
 
 //ip
-const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085'];
-let ipAddress = ipList[2];
+const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085', '192.168.3.236:8888'];
+let ipAddress = ipList[3];
 
 // export default function () {
 //   return <APIContainer
@@ -76,9 +76,10 @@ let ipAddress = ipList[2];
 export default function () {
   return (
       <APIContainer
-        API={`http://192.168.3.155:8088/api/adm/stat/meta/template/plaformRank`}
+        API={`http://${ipAddress}/api/adm/stat/meta/template/plaformRank`}
         queryData={{
         }}
+        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEwMDAwMDAwMDAwMDAwMDAxMCIsInVzZXJJZCI6Ijg3NjcwODA4MjQzNzE5NzgzMCIsInVzZXJUeXBlIjoxMDEsImJVc2VyVHlwZSI6IlNZU1RFTSIsInRlbmFudE9yZ0lkIjoxMDAwMDAwMDAwMDAwMDAwMTAsImFjY291bnQiOiJhZG1pbiIsImV4dHJhVXNlclR5cGUiOjAsImlhdCI6MTYwNDAyNzk2OCwianRpIjoiODc2NzA4MDgyNDM3MTk3ODMwIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2MDQyODcxNjh9.q1dBqVuHAKjYVgnMV8gXmJGd-4QYs2zOpJhj36mT8jxw1KQs8s66GFNMVllSRAP0tyivxKKjgm5yhA4AYWgjFA"
       >
         <AutoChart />
       </APIContainer>
