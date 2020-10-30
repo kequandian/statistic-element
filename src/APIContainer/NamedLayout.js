@@ -1,11 +1,27 @@
 import React from 'react';
 import * as LayoutSet from '@/components/Layout';
 
-export default function NamedLayout({ name, props, children }) {
-  const Layout = LayoutSet[name] || tips(name);
+export default function NamedLayout({ name, props, layout, children, ...rest }) {
 
-  return <Layout {...props}>
-    {children}
+  let layoutConfig = { ...layout };
+
+  if (typeof props === 'string') {
+    layoutConfig = {
+      ...layout,
+      name: props,
+    };
+  } else {
+    layoutConfig = { name, ...props, ...layout };
+  }
+
+  const Layout = LayoutSet[layoutConfig.name] || tips(layoutConfig.name);
+
+  return <Layout {...layoutConfig}>
+    {React.Children.toArray(children).map(child => {
+      return React.cloneElement(child, {
+        ...rest
+      })
+    })}
   </Layout>
 }
 

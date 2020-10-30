@@ -2,7 +2,6 @@
   "name": "statistic-element",
   "version": "1.0.0",
   "description": "Kequandian Statistic Element",
-  "main": "src/index.js",
   "scripts": {
     "start": "umi dev",
     "clean": "rimraf lib/",

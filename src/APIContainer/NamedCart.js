@@ -1,10 +1,9 @@
 import React from 'react';
 import * as CartSet from '@/export';
 
-export default function NamedCart({ name, ...rest }) {
+export default function NamedCart({ name, data, ...rest }) {
   const Cart = CartSet[name] || tips(name);
-
-  return <Cart {...rest} />;
+  return <Cart {...data}{...rest} />;
 }
 
 function tips(name) {
