@@ -16,6 +16,7 @@ import MonthReport from '@/Demo/MonthReportDemo';
 import SpecialLabelPie from '@/Demo/SpecialLabelPieDemo';
 import SingleColumnTatal from '@/Demo/SingleColumnTatalDemo';
 import AutoChart from '@/APIContainer/AutoChart';
+import APIContainer from '@/APIContainer';
 
 
 
@@ -37,5 +38,6 @@ export {
   MonthReport,
   SpecialLabelPie,
   SingleColumnTatal,
-  AutoChart
+  AutoChart,
+  APIContainer
 };

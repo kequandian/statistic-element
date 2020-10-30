@@ -75,7 +75,6 @@ let ipAddress = ipList[2];
 
 export default function () {
   return (
-    <div style="background: #f2f2f3;">
       <APIContainer
         API={`http://192.168.3.155:8088/api/adm/stat/meta/template/plaformRank`}
         queryData={{
@@ -83,7 +82,6 @@ export default function () {
       >
         <AutoChart />
       </APIContainer>
-    </div>
   )
   
   
