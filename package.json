@@ -16,7 +16,8 @@
     "layout-flex": "github:kequandian/layout-flex",
     "lodash": "^4.17.19",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "zero-element": "^1.1.7"
   },
   "devDependencies": {
     "@umijs/preset-react": "^1.5.12",
@@ -29,11 +30,12 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.14.3",
-    "react-test-renderer": "^16.9.0",
     "gulp": "^4.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
+    "react-test-renderer": "^16.9.0",
     "rimraf": "^2.7.1",
-    "umi": "^3.2.6"
+    "umi": "^3.2.6",
+    "zero-element-antd": "kequandian/zero-element-antd"
   }
 }

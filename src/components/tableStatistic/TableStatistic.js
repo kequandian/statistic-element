@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'antd';
+import { formatTableFields } from 'zero-element-antd/lib/container/List/utils/format';
 
 export default function TableStatistic(props) {
   const { title, rows, header, columns, ...pagination } = props;
@@ -8,7 +9,7 @@ export default function TableStatistic(props) {
 
   useEffect(_ => {
     if (Array.isArray(header) && Array.isArray(columns) && Array.isArray(rows)) {
-      const tColumns = formatTableFields(
+      const tColumns = toFormatTableFields(
         formatColumns(header, columns)
       );
 
@@ -17,11 +18,18 @@ export default function TableStatistic(props) {
     }
   }, [rows, header, columns]);
 
+  function handleRowClassName(record, index) {
+    if (index % 2 === 1) {
+      return 'ZEleA-table-odd';
+    }
+  }
+
   return <div style={{ padding: 16 }}>
     <h2>{title}</h2>
     <Table
       key="id"
       size="middle"
+      rowClassName={handleRowClassName}
       columns={tColumns}
       dataSource={records}
       pagination={false}
@@ -46,19 +54,23 @@ function formatColumns(titleList, typeList) {
   return rst;
 }
 
-function formatTableFields(params) {
+function toFormatTableFields(params) {
+  const { columns } = formatTableFields(params);
 
-  return params.map(item => {
-    const { label, field, ...rest } = item;
-    return {
-      ...rest,
-      title: label,
-      dataIndex: field,
-    }
-  });
+  return columns.filter(i => i.dataIndex !== 'id');
 }
 
 const typeMap = {
+  'A': { // 头像
+    valueType: 'complex',
+    align: 'center',
+    options: {
+      fields: [
+        { field: '头像', type: 'image' },
+        { field: '名称', type: 'plain' },
+      ]
+    },
+  },
   'D': { // 金钱
     valueType: 'currency',
     align: 'right',
