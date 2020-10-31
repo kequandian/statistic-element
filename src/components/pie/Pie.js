@@ -13,6 +13,8 @@
 
 import React from 'react';
 import ReactEcharts from 'echarts-for-react';
+import {ShadowCartDecorator} from '@/components/Decorator';
+
 
 class NightingaleIsRoseDiagramPie extends React.Component {
 
@@ -99,9 +101,7 @@ class NightingaleIsRoseDiagramPie extends React.Component {
     }
 
     return (
-      <div>
         <ReactEcharts option={getOption()}/>
-      </div>
     )
   }
 }

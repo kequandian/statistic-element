@@ -6,6 +6,7 @@ export default ({ children, props = {} }) => {
 
   return <Row type="flex" justify={justify} align={align}>
     {React.Children.map(children, child => {
+      console.log('child.props = ', child.props)
       return <Col sm={computeSpan(col, child.props.span)}>
         {child}
       </Col>

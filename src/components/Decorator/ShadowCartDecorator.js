@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './index.css';
 
 export default function ShadowCartDecorator({ children }) {
-  return <span className={styles.dShadowCartDecorator}>
+  return <div className={styles.dShadowCartDecorator}>
     {children}
-  </span>
+  </div>
 }

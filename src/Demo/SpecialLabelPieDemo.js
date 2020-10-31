@@ -1,8 +1,7 @@
 import React from 'react';
 import LineGrid from '@/components/lineGrid/LineGrid';
-import ColumnChain from '@/components/columnChain/ColumnChain';
 import Pie from '@/components/pie/Pie';
-import Bar from '@/components/bar/Bar';
+import {ShadowCartDecorator} from '@/components/Decorator';
 
 const SpecialLabelPieDemo = ({
     field,
@@ -28,7 +27,9 @@ const SpecialLabelPieDemo = ({
   return (
     <div >
       <LineGrid lineGridProps={lineGridProps}>
-        <Pie {...pieProps}/>
+        <ShadowCartDecorator>
+          <Pie {...pieProps}/>
+        </ShadowCartDecorator>
       </LineGrid>
     </div>
   )

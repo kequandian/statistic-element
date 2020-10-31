@@ -1,5 +1,7 @@
 import React from 'react';
 import Bar from '@/components/general-chart/Bar';
+import LineGrid from '@/components/lineGrid/LineGrid';
+import {ShadowCartDecorator} from '@/components/Decorator';
 
 const MonthReportDemo = ({
     identifier,
@@ -38,9 +40,14 @@ const MonthReportDemo = ({
         series : dataList
     }
     
+    const lineGridProps = {span:24}
 
     return (
-        <Bar {...barProps}/>
+        <LineGrid lineGridProps={lineGridProps}>
+            <ShadowCartDecorator>
+                <Bar {...barProps}/>
+            </ShadowCartDecorator>
+        </LineGrid>
     )
 }
 

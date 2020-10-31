@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Layout } from 'antd';
 import 'antd/dist/antd.css';
 
 import APIContainer from '@/APIContainer';
@@ -11,6 +12,8 @@ import NumberRowsDemo from '@/Demo/NumberRowsDemo';
 import ColumnTotalDemo from '@/Demo/ColumnTotalDemo';
 import MonthReportDemo from '@/Demo/MonthReportDemo';
 import SingleColumnChainDemo from '@/Demo/SingleColumnTatalDemo';
+
+const { Content } = Layout;
 
 //ip
 const ipList = ['ye128.natapp1.cc', '192.168.3.240:8080', '192.168.3.155:8085', '192.168.3.236:8888'];
@@ -75,6 +78,7 @@ let ipAddress = ipList[3];
 
 export default function () {
   return (
+    <Content style={{ padding: '20px', background: '#f2f2f3' }}>
       <APIContainer
         API={`http://${ipAddress}/api/adm/stat/meta/template/plaformRank`}
         queryData={{
@@ -83,7 +87,8 @@ export default function () {
       >
         <AutoChart />
       </APIContainer>
+    </Content>
+      
   )
-  
-  
+
 }
