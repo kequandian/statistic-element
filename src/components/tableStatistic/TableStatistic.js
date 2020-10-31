@@ -24,7 +24,7 @@ export default function TableStatistic(props) {
     }
   }
 
-  return <div style={{ padding: 16 }}>
+  return <div>
     <h2>{title}</h2>
     <Table
       key="id"
