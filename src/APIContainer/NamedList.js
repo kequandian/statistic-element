@@ -1,16 +1,17 @@
 import React from 'react';
 import * as NamedListSet from '@/components/NamedList';
+import { query } from 'zero-element-antd/lib/utils/request';
 
-export default function NamedList({ name, records, props, children }) {
+export default function NamedList({ name, API, props, children }) {
   const NamedList = NamedListSet[name] || tips(name);
 
-  if (Array.isArray(records)) {
-    return <NamedList {...props}>
-      {records.map(item => React.cloneElement(children, {
-        ...item,
-      }))}
-    </NamedList>
+  function handleQuery(queryData) {
+    return query(API, queryData);
   }
+
+  return <NamedList {...props} onQuery={handleQuery}>
+    {children}
+  </NamedList>
 
 }
 

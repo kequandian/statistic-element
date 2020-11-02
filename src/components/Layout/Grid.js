@@ -1,12 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 
-export default ({ children, props = {} }) => {
-  const { col, justify = 'space-between', align = 'middle' } = props;
+export default ({ children, col, justify = 'space-between', align = 'middle' }) => {
 
   return <Row type="flex" justify={justify} align={align}>
     {React.Children.map(children, child => {
-      console.log('child.props = ', child.props)
       return <Col sm={computeSpan(col, child.props.span)}>
         {child}
       </Col>
@@ -14,6 +12,6 @@ export default ({ children, props = {} }) => {
   </Row>
 }
 
-function computeSpan(col, span = 1) {
+function computeSpan(col, span) {
   return ~~(24 / col) * span || 24;
 }

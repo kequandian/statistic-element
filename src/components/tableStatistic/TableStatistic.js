@@ -67,9 +67,18 @@ const typeMap = {
     options: {
       fields: [
         { field: '头像', type: 'image' },
-        { field: '名称', type: 'plain' },
+        {
+          field: '名称', type: 'plain', options: {
+            style: {
+              fontWeight: 900
+            }
+          }
+        },
       ]
     },
+  },
+  'C': { // 数量
+    align: 'right',
   },
   'D': { // 金钱
     valueType: 'currency',
@@ -78,7 +87,9 @@ const typeMap = {
       nullPlaceholder: '-',
     },
   },
-  'T': {},// 时间
+  'I': { // 索引
+    valueType: 'index',
+  },
   'P': { // 百分比
     valueType: 'percentage',
     align: 'right',
@@ -86,8 +97,6 @@ const typeMap = {
       nullPlaceholder: '-',
     },
   },
-  'C': { // 数量
-    align: 'right',
-  },
   'S': {}, // 字符串
+  'T': {},// 时间
 };

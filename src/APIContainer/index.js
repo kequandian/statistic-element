@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import formatData from './formatData';
 
 /**
  * 
@@ -7,21 +6,15 @@ import formatData from './formatData';
  */
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, queryData = {}, token, extend = true, children, ...rest } = props;
+  const { API, queryData, extend = true, children, ...rest } = props;
 
   useEffect(_ => {
-    promiseAjax(API, queryData, token)
+    promiseAjax(API, queryData)
       .then(responseData => {
         console.log('request rst: ', responseData);
 
         if (responseData && responseData.code === 200) {
-          const list = formatData(responseData.data);
-          setData({
-            list: list,
-            layout: responseData.data.layout,
-            span: responseData.data.span,
-            title: responseData.data.title,
-          });
+          setData(responseData.data);
         }
       })
   }, []);
@@ -32,7 +25,7 @@ export default function APIContainer(props) {
   })
 }
 
-function promiseAjax(url, data, token, options = {} ) {
+function promiseAjax(url, data, token, options = {}) {
   const { method = 'GET', async = true } = options;
 
   let param;
@@ -46,8 +39,8 @@ function promiseAjax(url, data, token, options = {} ) {
   return new Promise((resolve, reject) => {
     let xhr = new XMLHttpRequest();
     xhr.open(method, `${url}${param}`, async);
-    
-    if(token){
+
+    if (token) {
       xhr.setRequestHeader("Authorization", `Bearer ${token}`);
     }
 
