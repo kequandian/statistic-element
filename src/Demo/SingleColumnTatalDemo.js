@@ -16,6 +16,8 @@ const SingleColumnTatalDemo = ({
     value: item.value,
   }
 
+  console.log('rates = ', rates)
+
   return (
     <div style={{
       display: 'flex', margin:'12px 8px', justifyContent: 'center'}}>

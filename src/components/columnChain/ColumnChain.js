@@ -50,7 +50,7 @@ class ColumnChain extends React.Component {
 
     const valueStyle = {
       color: '#0084FF',
-      fontSize: '20px',
+      fontSize: '40px',
       padding: '0.2em 0',
       ...this.props.valueStyle
     }
