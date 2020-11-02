@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+let queryMethod = promiseAjax;
 
 /**
  * 
@@ -6,10 +7,10 @@ import React, { useState, useEffect } from 'react';
  */
 export default function APIContainer(props) {
   const [data, setData] = useState({});
-  const { API, queryData, extend = true, children, ...rest } = props;
+  const { API, queryData, extend = true, token, children, ...rest } = props;
 
   useEffect(_ => {
-    promiseAjax(API, queryData)
+    queryMethod(API, queryData, token)
       .then(responseData => {
         console.log('request rst: ', responseData);
 
@@ -23,6 +24,14 @@ export default function APIContainer(props) {
     ...(extend ? { ...data } : { data }),
     ...rest,
   })
+}
+
+function regQueryMethod(func) {
+  queryMethod = func;
+}
+
+export {
+  regQueryMethod,
 }
 
 function promiseAjax(url, data, token, options = {}) {
