@@ -80,10 +80,10 @@ export default function () {
   return (
     <Content style={{ padding: '20px', background: '#f2f2f3' }}>
       <APIContainer
-        API={`http://${ipAddress}/api/adm/stat/meta/template/plaformRank`}
+        API={`http://${ipAddress}/api/adm/stat/meta/template/advertiser`}
         queryData={{
         }}
-        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEwMDAwMDAwMDAwMDAwMDAxMCIsInVzZXJJZCI6Ijg3NjcwODA4MjQzNzE5NzgzMCIsInVzZXJUeXBlIjoxMDEsImJVc2VyVHlwZSI6IlNZU1RFTSIsInRlbmFudE9yZ0lkIjoxMDAwMDAwMDAwMDAwMDAwMTAsImFjY291bnQiOiJhZG1pbiIsImV4dHJhVXNlclR5cGUiOjAsImlhdCI6MTYwNDAyNzk2OCwianRpIjoiODc2NzA4MDgyNDM3MTk3ODMwIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2MDQyODcxNjh9.q1dBqVuHAKjYVgnMV8gXmJGd-4QYs2zOpJhj36mT8jxw1KQs8s66GFNMVllSRAP0tyivxKKjgm5yhA4AYWgjFA"
+        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEwMDAwMDAwMDAwMDAwMDEyMyIsInVzZXJJZCI6Ijg3NjcwODA4MjQzNzE5NzkyNyIsInVzZXJUeXBlIjoxLCJiVXNlclR5cGUiOiJVU0VSIiwidGVuYW50T3JnSWQiOjEwMDAwMDAwMDAwMDAwMDEyMywiYWNjb3VudCI6IjEzODAwMTM4MDA1IiwiZXh0cmFVc2VyVHlwZSI6MCwiaWF0IjoxNjA0Mjk5MDMwLCJqdGkiOiI4NzY3MDgwODI0MzcxOTc5MjciLCJzdWIiOiIxMzgwMDEzODAwNSIsImV4cCI6MTYwNDU1ODIzMH0.0W8y0sRdzR3-B6F6WhMB_jbd5RX142k8RzQFAqkTuiK8qQ9AQwfTByaCtfxYQfGh8iuy5fuf2rHW-7niQl0mbA"
       >
         <AutoChart />
       </APIContainer>
