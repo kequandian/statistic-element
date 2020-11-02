@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './index.css';
+import './index.css';
 
 export default function ShadowCartDecorator({ children }) {
-  return <div className={styles.dShadowCartDecorator}>
+  return <div className="dShadowCartDecorator">
     {children}
   </div>
 }
