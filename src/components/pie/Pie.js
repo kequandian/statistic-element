@@ -78,7 +78,7 @@ class NightingaleIsRoseDiagramPie extends React.Component {
                 show : true,
                 feature : {
                     mark : {show: true},
-                    dataView : {show: true, readOnly: false},
+                    dataView : {show: false, readOnly: false},
                     magicType : {
                         show: true,
                         type: ['pie', 'funnel'],
@@ -91,7 +91,7 @@ class NightingaleIsRoseDiagramPie extends React.Component {
                             }
                         }
                     },
-                    restore : {show: true},
+                    restore : {show: false},
                     saveAsImage : {show: true}
                 }
             },
