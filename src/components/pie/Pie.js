@@ -43,7 +43,7 @@ class NightingaleIsRoseDiagramPie extends React.Component {
         })
       }
     }
-    console.log('newLegend = ', newLegend);
+    // console.log('newLegend = ', newLegend);
 
     series && series.length > 0 && series.map((item,index) => {
       series[index] = {
@@ -55,7 +55,7 @@ class NightingaleIsRoseDiagramPie extends React.Component {
       }
       //获取legend
     })
-    console.log('series = ', series);
+    // console.log('series = ', series);
 
     var getOption = () => {
       return {

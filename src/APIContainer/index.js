@@ -12,7 +12,6 @@ export default function APIContainer(props) {
   useEffect(_ => {
     queryMethod(API, queryData, token)
       .then(responseData => {
-        console.log('request rst: ', responseData);
 
         if (responseData && responseData.code === 200) {
           setData(responseData.data);

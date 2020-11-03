@@ -22,7 +22,7 @@ const SingleColumnTatalDemo = ({
     }
   }
 
-  console.log('rates = ', rates)
+  // console.log('rates = ', rates)
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center'}}>

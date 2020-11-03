@@ -123,7 +123,7 @@ export default function GeneralChartWrapped(defaultOption, formatOption = false)
         ...restEchart,
       };
       
-      console.log("option = ", option);
+      // console.log("option = ", option);
 
       if (levelDisplay === true) {
         option = {
