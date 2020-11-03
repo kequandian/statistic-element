@@ -43,10 +43,20 @@ export default GeneralChartWrapped(
           show: true,
           position: 'top',
           formatter: (data) => {
-            if (Number(data.value) === 0) {
+            var result = [];
+            var unit = data.data.unit;
+            var value = data.value;
+            if (Number(value) === 0) {
               return '';
             }
-            return data.value;
+            
+            if(unit){
+              unit = unit.replace("&", `${value}`)
+              result.unshift(unit);
+            }else{
+              result.unshift(value);
+            }
+            return result;
           }
         }
       },

@@ -13,20 +13,28 @@ const MonthReportDemo = ({
     title,
     chart,
     span,
+    icon
 }) => {
 
     let newLegend = {type:'category', data:[]};
     let dataList = [];
+    let unit = '';
+
+    if(icon && Array.isArray(icon) && icon.length > 0){
+        unit = icon[0].value
+    }
+
     if(rates && rates.length > 0) {
         if(rates && rates.length > 0){
             rates.map((item,index) => {
                 newLegend.data.push(item.name);
                 const dataItem = {};
                 dataItem.name = item.name;
-                dataItem.barMaxWidth = '45';
+                dataItem.barMaxWidth = '30';
                 dataItem.markLine = {data:[]};
                 const valueList = [];
-                valueList.push(item.value);
+                const valueListItem = {unit, value: item.value};
+                valueList.push(valueListItem);
                 dataItem.data = valueList;
                 dataList.push(dataItem);
             })
@@ -39,6 +47,7 @@ const MonthReportDemo = ({
         axis: newLegend,
         series : dataList
     }
+
     
     const lineGridProps = {span:24}
 

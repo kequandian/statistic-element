@@ -25,11 +25,11 @@ const SingleColumnTatalDemo = ({
   // console.log('rates = ', rates)
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center'}}>
-        <ShadowCartDecorator>
+      <ShadowCartDecorator>
+        <div style={{display:'flex', justifyContent:'center'}}>
           <ColumnChain {...ColumnChainProps}/>
-        </ShadowCartDecorator>
-    </div>
+        </div>
+      </ShadowCartDecorator>
   )
 }
 
