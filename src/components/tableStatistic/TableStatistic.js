@@ -10,7 +10,7 @@ export default function TableStatistic(props) {
   useEffect(_ => {
     if (Array.isArray(header) && Array.isArray(columns) && Array.isArray(rows)) {
       const tColumns = toFormatTableFields(
-        formatColumns(header, columns)
+        formatColumns(header, columns, rows)
       );
 
       setTColumns(tColumns);
@@ -27,7 +27,7 @@ export default function TableStatistic(props) {
   return <div>
     <h2>{title}</h2>
     <Table
-      key="id"
+      rowKey="id"
       size="middle"
       rowClassName={handleRowClassName}
       columns={tColumns}
@@ -42,14 +42,26 @@ export default function TableStatistic(props) {
  * @param {array} titleList 
  * @param {array} typeList 
  */
-function formatColumns(titleList, typeList) {
+function formatColumns(titleList, typeList, rows) {
   const rst = [];
   titleList.forEach((title, i) => {
-    rst.push({
+    let data = {
       label: title,
       field: title,
-      ...typeMap[typeList[i]],
-    });
+    };
+
+    if (typeof typeMap[typeList[i]] === 'function') {
+      data = {
+        ...data,
+        ...typeMap[typeList[i]](title, rows)
+      }
+    } else {
+      data = {
+        ...data,
+        ...typeMap[typeList[i]]
+      }
+    }
+    rst.push(data);
   });
   return rst;
 }
@@ -61,21 +73,35 @@ function toFormatTableFields(params) {
 }
 
 const typeMap = {
-  'A': { // 头像
-    valueType: 'complex',
-    align: 'center',
-    options: {
-      fields: [
-        { field: '头像', type: 'image' },
-        {
-          field: '名称', type: 'plain', options: {
-            style: {
-              fontWeight: 900
+  'A': function (title, rows) {// 头像
+
+    if (Array.isArray(rows)) {
+      rows.forEach(row => {
+        const value = row[title];
+
+        if (Array.isArray(value)) {
+          row._name = value[0];
+          row._avatar = value[1];
+        }
+      })
+    }
+
+    return {
+      valueType: 'complex',
+      align: 'center',
+      options: {
+        fields: [
+          { field: '_avatar', type: 'image' },
+          {
+            field: '_name', type: 'plain', options: {
+              style: {
+                fontWeight: 900
+              }
             }
-          }
-        },
-      ]
-    },
+          },
+        ]
+      },
+    }
   },
   'C': { // 数量
     align: 'right',
