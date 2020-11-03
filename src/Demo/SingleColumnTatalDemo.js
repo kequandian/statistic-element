@@ -14,6 +14,12 @@ const SingleColumnTatalDemo = ({
   const ColumnChainProps = {
     title: item.name,
     value: item.value,
+    titleStyle:{
+      fontSize: '15px'
+    },
+    valueStyle:{
+      fontSize: '35px'
+    }
   }
 
   console.log('rates = ', rates)
