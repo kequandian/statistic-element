@@ -1,9 +1,10 @@
 import React from 'react';
 import TableStatistic from '@/components/tableStatistic/TableStatistic';
-import {ShadowCartDecorator} from '@/components/Decorator';
+import { ShadowCartDecorator } from '@/components/Decorator';
 
 const TableStatisticDemo = ({
   columns,
+  title,
   current,
   header,
   pages,
@@ -18,12 +19,12 @@ const TableStatisticDemo = ({
     columns: columns,
     rows: rows,
     header: header,
-    title:''
+    title: title,
   }
 
   return (
     <ShadowCartDecorator>
-      <TableStatistic {...tableStatisticProps}/>
+      <TableStatistic {...tableStatisticProps} />
     </ShadowCartDecorator>
   )
 }
