@@ -88,7 +88,7 @@ const typeMap = {
 
     return {
       valueType: 'complex',
-      align: 'center',
+      align: 'left',
       options: {
         fields: [
           { field: '_avatar', type: 'image' },
@@ -102,6 +102,14 @@ const typeMap = {
         ]
       },
     }
+  },
+  'B': { // 粗体
+    valueType: 'plain',
+    options: {
+      style: {
+        fontWeight: 900
+      }
+    },
   },
   'C': { // 数量
     align: 'right',
