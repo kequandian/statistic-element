@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Table } from 'antd';
+import { Typography, Table } from 'antd';
 import { formatTableFields } from 'zero-element-antd/lib/container/List/utils/format';
+
+const { Title } = Typography;
 
 export default function TableStatistic(props) {
   const { title, rows, header, columns, ...pagination } = props;
@@ -25,7 +27,7 @@ export default function TableStatistic(props) {
   }
 
   return <div>
-    <h2>{title}</h2>
+    <Title level={5}>{title}</Title>
     <Table
       rowKey="id"
       size="middle"
@@ -113,6 +115,14 @@ const typeMap = {
   },
   'C': { // 数量
     align: 'right',
+    valueType: 'plain',
+    options: {
+      style: {
+        fontWeight: 900,
+        fontSize: 18,
+        color: '#d8330e',
+      }
+    },
   },
   'D': { // 金钱
     valueType: 'currency',
@@ -133,4 +143,38 @@ const typeMap = {
   },
   'S': {}, // 字符串
   'T': {},// 时间
+  'UA': function (title, rows) {// 用户头像-圆角
+
+    if (Array.isArray(rows)) {
+      rows.forEach(row => {
+        const value = row[title];
+
+        if (Array.isArray(value)) {
+          row._name = value[0];
+          row._avatar = value[1];
+        }
+      })
+    }
+
+    return {
+      valueType: 'complex',
+      align: 'left',
+      options: {
+        fields: [
+          {
+            field: '_avatar', type: 'image', options: {
+              circle: true,
+            }
+          },
+          {
+            field: '_name', type: 'plain', options: {
+              style: {
+                fontWeight: 900
+              }
+            }
+          },
+        ]
+      },
+    }
+  },
 };
