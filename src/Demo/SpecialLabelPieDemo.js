@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col } from 'antd';
 import LineGrid from '@/components/lineGrid/LineGrid';
 import Pie from '@/components/pie/Pie';
 import {ShadowCartDecorator} from '@/components/Decorator';
@@ -28,7 +29,11 @@ const SpecialLabelPieDemo = ({
     <div >
       <LineGrid lineGridProps={lineGridProps}>
         <ShadowCartDecorator>
-          <Pie {...pieProps}/>
+          <Row justify="center">
+            <Col span={12} >
+              <Pie {...pieProps}/>
+            </Col>
+          </Row>
         </ShadowCartDecorator>
       </LineGrid>
     </div>
