@@ -81,10 +81,10 @@ export default function () {
   return (
     <Content style={{ padding: '20px', background: '#f2f2f3' }}>
       <APIContainer
-        API={`http://${ipAddress}/api/adm/stat/meta/template/cinema`}
+        API={`http://${ipAddress}/api/adm/stat/meta/template/plaformOrder`}
         queryData={{
         }}
-        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEwMDAwMDAwMDAwMDAwMDAxMCIsInVzZXJJZCI6Ijg3NjcwODA4MjQzNzE5NzgzMCIsInVzZXJUeXBlIjoxMDEsImJVc2VyVHlwZSI6IlNZU1RFTSIsInRlbmFudE9yZ0lkIjoxMDAwMDAwMDAwMDAwMDAwMTAsImFjY291bnQiOiJhZG1pbiIsImV4dHJhVXNlclR5cGUiOjAsImlhdCI6MTYwNDMwOTk0MiwianRpIjoiODc2NzA4MDgyNDM3MTk3ODMwIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2MDQ1NjkxNDJ9.rVYNVb5xaikD-9V_QCi7lXtLS9suWdiC1yXtLLIHJKlJHfTQSd2VZ2-7aTSJvHOmr6McdspcsaejKw3ltmV__A"
+        token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJvcmdJZCI6IjEwMDAwMDAwMDAwMDAwMDAxMCIsInVzZXJJZCI6Ijg3NjcwODA4MjQzNzE5NzgzMCIsInVzZXJUeXBlIjoxMDEsImJVc2VyVHlwZSI6IlNZU1RFTSIsInRlbmFudE9yZ0lkIjoxMDAwMDAwMDAwMDAwMDAwMTAsImFjY291bnQiOiJhZG1pbiIsImV4dHJhVXNlclR5cGUiOjAsImlhdCI6MTYwNDQ2Mjk1MCwianRpIjoiODc2NzA4MDgyNDM3MTk3ODMwIiwic3ViIjoiYWRtaW4iLCJleHAiOjE2MDQ3MjIxNTB9.2kD1hzP6JWeiwgKPZheTe8RYmbDY-_bHgdv4DlYKAGzzeWbVCtdLBYzpEtx-WpyO5iNkZm5U2gPxkHQt5knJ5Q"
       >
         <AutoChart />
       </APIContainer>

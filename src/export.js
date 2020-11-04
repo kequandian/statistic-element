@@ -12,12 +12,13 @@ import Radar from '@/components/radar/Radar';
 import Instrument from '@/components/instrument/Instrument';
 // import TableStatistic from '@/components/tableStatistic/TableStatistic';
 import NewProgressRing from '@/components/newProgress/NewProgressRing';
-import MonthReport from '@/Demo/MonthReportDemo';
+// import MonthReport from '@/Demo/MonthReportDemo';
 import SpecialLabelPie from '@/Demo/SpecialLabelPieDemo';
 import SingleColumnTatal from '@/Demo/SingleColumnTatalDemo';
 import AutoChart from '@/APIContainer/AutoChart';
 import APIContainer from '@/APIContainer';
 import TableStatistic from '@/Demo/TableStatisticDemo';
+import MonthReport from '@/Demo/MonthReportSingleDemo';
 
 
 
