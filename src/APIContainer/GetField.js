@@ -18,9 +18,10 @@ export default function GetField({ children, dataField, itemIndex = 0, ...rest }
   if (Array.isArray(data)) {
     data = data[itemIndex];
   }
+  const childrenList = React.Children.toArray(children);
 
-  return React.cloneElement(children, {
+  return childrenList.map(child => React.cloneElement(child, {
     ...rest,
     ...data,
-  })
+  }))
 }
