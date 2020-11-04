@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Table } from 'antd';
 import { formatTableFields } from 'zero-element-antd/lib/container/List/utils/format';
+import './index.css';
 
 const { Title } = Typography;
 
@@ -31,6 +32,7 @@ export default function TableStatistic(props) {
     <Table
       rowKey="id"
       size="middle"
+      className="s-TableStatistic"
       rowClassName={handleRowClassName}
       columns={tColumns}
       dataSource={records}
@@ -114,13 +116,13 @@ const typeMap = {
     },
   },
   'C': { // 数量
-    align: 'right',
+    align: 'center',
     valueType: 'plain',
     options: {
       style: {
         fontWeight: 900,
         fontSize: 18,
-        color: '#d8330e',
+        color: '#1B7FBC',
       }
     },
   },
