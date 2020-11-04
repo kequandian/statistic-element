@@ -43,6 +43,7 @@ export default GeneralChartWrapped(
           show: true,
           position: 'top',
           formatter: (data) => {
+            // console.log('data = ', data)
             var result = [];
             var unit = data.data.unit;
             var value = data.value;

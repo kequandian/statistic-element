@@ -17,36 +17,37 @@ const MonthReportSingleDemo = ({
 }) => {
 
     let newLegend = {type:'category', data:[]};
-    let dataList = [];
     let unit = '';
+
+    const seriesItem = {
+        name: '',
+        type: 'bar',
+        barWidth: '30%',
+        data:[]
+    };
 
     if(icon && Array.isArray(icon) && icon.length > 0){
         unit = icon[0].value
     }
 
+    const valueList = [];
+
     if(rates && rates.length > 0) {
         if(rates && rates.length > 0){
             rates.map((item,index) => {
-                newLegend.data.push(item.name);
                 const dataItem = {};
-                dataItem.name = item.name;
-                dataItem.barMaxWidth = '30';
                 dataItem.markLine = {data:[]};
-                const valueList = [];
                 const valueListItem = {unit, value: item.value};
+                newLegend.data.push(item.name);
                 valueList.push(valueListItem);
-                dataItem.data = valueList;
-                dataList.push(dataItem);
             })
         }
     }
-
-    newLegend.data=['数量统计']
+    
+    seriesItem.data = valueList;
+    seriesItem.markLine={data:[]};
 
     const xAxisData = {
-        title:{
-            text: '数量统计',
-        },
         color: ['#61A0A8'],
         tooltip: {
             trigger: 'axis',
@@ -55,7 +56,7 @@ const MonthReportSingleDemo = ({
             }
         },
         legend: {
-            data: ['数量统计']
+            data: ['']
         },
         grid: {
             left: '3%',
@@ -66,39 +67,20 @@ const MonthReportSingleDemo = ({
         xAxis: [
             {
                 type: 'category',
-                data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '7月', '7月', '7月'],
+                data: newLegend.data,
                 axisTick: {
                     alignWithLabel: true
                 }
             }
-        ],
-        yAxis: [
-            {
-                type: 'value'
-            }
-        ],
-        series: [
-            {
-                name: '数量统计',
-                type: 'bar',
-                barWidth: '40%',
-                data: [10, 52, 200, 334, 390, 330, 220, 20, 100, 500],
-                label: {
-                    normal: {
-                        show: true,
-                        position: 'top',
-                    }
-                },
-            }
-            
         ]
     }
-
+    
     const barProps = {
         levelDisplay: false,
         title: title,
-        axis: newLegend,
-        series : dataList,
+        series : [
+            seriesItem
+        ],
         echart:xAxisData
     }
 
