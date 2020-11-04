@@ -61,7 +61,7 @@ export default GeneralChartWrapped(
         }
       },
     },
-    Calulable: false,
+    calulable: false,
   },
   (option) => {
     console.log('Bar EChart option:', option);
