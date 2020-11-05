@@ -28,7 +28,7 @@ export default function TableStatistic(props) {
   }
 
   return <div>
-    <Title level={5}>{title}</Title>
+    {title ? (<Title level={5}>{title}</Title>) : null}
     <Table
       rowKey="id"
       size="middle"

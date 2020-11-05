@@ -1,12 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { List, Button } from 'antd';
-import { useMount } from 'ahooks';
 import formatData from '@/APIContainer/formatData';
+import { useMount, useSize } from 'ahooks';
+import useLayout from '@/utils/useLayout';
+import ContainerContext from '@/utils/ContainerContext';
 
 export default function LoadMoreList(props) {
   const { onQuery, children } = props;
   const [loading, setLoading] = useState(false);
   const [data, setData] = useState([]);
+  const [layoutRef, { getClassName }] = useLayout();
+  const containerRef = useRef();
+  const size = useSize(containerRef);
 
   useMount(_ => {
     handleQuery();
@@ -28,19 +33,27 @@ export default function LoadMoreList(props) {
 
   const Child = React.Children.only(children);
 
-  return <List
-    loading={loading}
-    loadMore={<>
-      {loading ? null : <div style={{
-        textAlign: 'center',
-        marginTop: 12,
-        height: 32,
-      }}><Button>加载更多</Button></div>}
-    </>}
-    dataSource={data}
-    renderItem={item => React.isValidElement(Child) ?
-      React.cloneElement(Child, item)
-      : <Child {...item} />
-    }
-  />
+  return <div ref={containerRef}>
+    <ContainerContext.Provider value={size}>
+      <List
+        loading={loading}
+        className={getClassName()}
+        loadMore={<>
+          {loading ? null : <div style={{
+            textAlign: 'center',
+            margin: 12,
+            height: 32,
+          }}><Button>加载更多</Button></div>}
+        </>}
+        dataSource={data}
+        renderItem={item => React.isValidElement(Child) ?
+          React.cloneElement(Child, {
+            ...item,
+            ref: layoutRef,
+          })
+          : <Child {...item} ref={layoutRef} />
+        }
+      />
+    </ContainerContext.Provider>
+  </div>
 }

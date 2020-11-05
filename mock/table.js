@@ -14,6 +14,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -45,6 +46,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "C"
@@ -83,6 +85,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -156,6 +159,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -223,6 +227,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -254,6 +259,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -285,6 +291,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",
@@ -375,6 +382,7 @@ export default {
         "current": 1,
         "pages": 1,
         "size": 10,
+        "span": 2,
         "columns": [
           "S",
           "S",

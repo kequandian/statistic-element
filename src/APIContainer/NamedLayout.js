@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useImperativeHandle, forwardRef } from 'react';
 import * as LayoutSet from '@/components/Layout';
+import useLayout from '@/utils/useLayout';
 
-export default function NamedLayout({ name, props, layout, children, ...rest }) {
+export default forwardRef(function NamedLayout({ name, props, layout, children, ...rest }, ref) {
+  const [layoutRef, { getClassName }] = useLayout();
+
+  useImperativeHandle(ref, () => ({
+    getClassName: getClassName,
+  }));
 
   let layoutConfig = { ...layout };
 
@@ -16,14 +22,14 @@ export default function NamedLayout({ name, props, layout, children, ...rest }) 
 
   const Layout = LayoutSet[layoutConfig.name] || tips(layoutConfig.name);
 
-  return <Layout {...layoutConfig}>
+  return <Layout {...layoutConfig} ref={layoutRef}>
     {React.Children.toArray(children).map(child => {
       return React.cloneElement(child, {
         ...rest
       })
     })}
   </Layout>
-}
+})
 
 function tips(name) {
   return _ => `Layout ${name} 未定义`;

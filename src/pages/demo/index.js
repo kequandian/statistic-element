@@ -13,8 +13,16 @@ export default function Demo(props) {
   //   </GetField>
   // </NamedList>
 
+  // return <NamedLayout name="WrappedGrid">
+  //   <NamedList name="LoadMoreList" API="/api/adm/stat/meta/template/table">
+  //     <GetField dataField="data">
+  //       <NamedCart name="TableStatistic" />
+  //     </GetField>
+  //   </NamedList>
+  // </NamedLayout>
+
   return <NamedList name="LoadMoreList" API="/api/adm/stat/meta/template/table">
-    <NamedLayout name="Grid">
+    <NamedLayout name="WrappedGrid">
       <GetField dataField="data">
         <NamedCart name="TableStatistic" />
       </GetField>
