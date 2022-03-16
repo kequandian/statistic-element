@@ -13,7 +13,7 @@
     "antd": "^4.5.4",
     "echarts": "^4.1.0",
     "echarts-for-react": "^2.0.14",
-    "layout-flex": "github:kequandian/layout-flex",
+    "layout-flex": "git+https://gitee.com:smallsaas/layout-flex.git",
     "lodash": "^4.17.19",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
