@@ -8,7 +8,7 @@
 */
 import React, { Component } from 'react';
 import { Spin } from 'antd';
-import Statistic from '@/Statistic';
+import Statistic from '@/statistic';
 
 let queryMethod;
 

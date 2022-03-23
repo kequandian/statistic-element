@@ -1,4 +1,4 @@
-import StatisticWrapped from './Statistic';
+import StatisticWrapped from './statistic';
 
 // import NumberRows from '../numberRows/NumberRows';
 // import ColumnTotal from '../columnTotal/ColumnTotal';
